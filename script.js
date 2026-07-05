@@ -69,3 +69,34 @@ function updateCounter() {
     allDoneMsg.classList.remove("visible");
   }
 }
+
+// Add task
+
+function addTask() {
+  const text = taskInput.value.trim();
+
+  errorMsg.textContent = "";
+
+  if (text === "") {
+    errorMsg.textContent = "Please type a task first";
+    return;
+  }
+
+  const exists = tasks.some(
+    (task) => task.text.toLowerCase() === text.toLowerCase(),
+  );
+
+  if (exists) {
+    errorMsg.textContent = "This task already exists!";
+    return;
+  }
+
+  tasks.push({
+    text: text,
+    done: false,
+  });
+
+  taskInput.value = "";
+
+  renderTasks();
+}
