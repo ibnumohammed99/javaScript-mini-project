@@ -9,3 +9,6 @@ const remainingCount = document.getElementById("remainingCount");
 const counter = document.getElementById("counter");
 const allDoneMsg = document.getElementById("allDoneMsg");
 const colorCircles = document.querySelectorAll(".color-circle");
+
+// Store tasks
+let tasks = [];
