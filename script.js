@@ -100,3 +100,18 @@ function addTask() {
 
   renderTasks();
 }
+
+// Event listeners
+
+addBtn.addEventListener("click", addTask);
+
+taskInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
+
+clearBtn.addEventListener("click", () => {
+  tasks = [];
+  renderTasks();
+});
