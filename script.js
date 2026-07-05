@@ -48,3 +48,24 @@ function renderTasks() {
 
   updateCounter();
 }
+// Update counter
+
+function updateCounter() {
+  const remaining = tasks.filter((task) => !task.done).length;
+  const completed = tasks.filter((task) => task.done).length;
+
+  remainingCount.textContent = remaining;
+
+  counter.innerHTML = `Tasks remaining: <span id="remainingCount">${remaining}</span><br>
+        ${completed} of ${tasks.length} tasks completed`;
+
+  if (tasks.length > 0 && remaining === 0) {
+    counter.textContent = "🎉 All tasks done!";
+    counter.classList.add("done");
+
+    allDoneMsg.classList.add("visible");
+  } else {
+    counter.classList.remove("done");
+    allDoneMsg.classList.remove("visible");
+  }
+}
