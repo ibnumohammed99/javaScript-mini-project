@@ -115,3 +115,17 @@ clearBtn.addEventListener("click", () => {
   tasks = [];
   renderTasks();
 });
+// Color picker
+
+colorCircles.forEach((circle) => {
+  circle.addEventListener("click", () => {
+    document.body.style.backgroundColor = circle.dataset.color;
+
+    colorCircles.forEach((c) => c.classList.remove("active"));
+
+    circle.classList.add("active");
+  });
+});
+
+// Initial render
+renderTasks();
