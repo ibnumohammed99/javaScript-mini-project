@@ -121,6 +121,11 @@ h1 {
   text-decoration: line-through;
   color: #aaa;
 }
+.task-item.done {
+  background: #d9fdd3;
+  border-left: 5px solid #4caf50;
+  transition: all 0.3s ease;
+}
 
 .done {
   background: #f0f0f0;
